@@ -205,7 +205,7 @@ for format, log_jsons in log_json_dict.items():
         if (os.path.exists(path) and os.path.exists(logPath)):
             continue
 
-        replay_object = Replay.create_replay_object(log, show_full_damage=True)
+        replay_object = create_replay_object(log, show_full_damage=True)
         html = create_replay(replay_object,
                                       replay_embed_location=replay_embed_location)
         with open(path, "w") as f:

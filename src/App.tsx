@@ -46,7 +46,7 @@ export function App() {
   return (
     <div style={{ width: "100vw", height: "100vh", overflow: "hidden" }}>
       <Stack direction={"row"} spacing={2}>
-        <Typography variant="h5">Staraptor Showdown Replay Server</Typography>
+        <Typography variant="h5">Pokemon Showdown Reborn Replay Server</Typography>
 
         <IconButton onClick={toggleTheme} aria-label="Toggle theme">
           {mode === "light" ? <LightMode /> : <DarkMode />}

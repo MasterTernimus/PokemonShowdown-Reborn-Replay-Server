@@ -8,7 +8,7 @@ Everything assumes this folder is at the same level at the server and client
 ```
 ├── pokemon-showdown
 │   ├── logs
-├── pokemon-showdown-client
+├── PokemonShowdown-Client
 │   ├── play.pokemonshowdown.com
 │   |   └── replays
 ├── replay-server
@@ -28,7 +28,7 @@ Everything assumes this folder is at the same level at the server and client
 Ensure your nginx config has this inside it
 ```nginx
     location / {
-        root /var/www/pokemon-showdown-client/play.pokemonshowdown.com/;
+        root /var/www/PokemonShowdown-Client/play.pokemonshowdown.com/;
         index index.html;
         autoindex on;
     }

@@ -3,7 +3,7 @@ import csv
 import json
 import re
 
-server_location = "https://staraptorshowdown.com"
+server_location = "https://play.pokemonreborn-showdown.xyz"
 
 month_to_index = {
     'Jan': '01',
@@ -106,6 +106,6 @@ def process_logs(folder_path, output_csv):
                             print(f"Error processing file {file_path}: {e}")
 
 
-process_logs('../pokemon-showdown/logs',
-             '../pokemon-showdown-client/play.pokemonshowdown.com/replays/data.csv')
+process_logs('../../PokemonShowdown-Reborn/logs',
+             '../PokemonShowdown-Client/play.pokemonshowdown.com/replays/data.csv')
 print("Generated CSV")

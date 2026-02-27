@@ -4,7 +4,7 @@ import os
 import re
 from collections import defaultdict
 
-replay_embed_location="https://staraptorshowdown.com/js/replay-embed.js"
+replay_embed_location="https://play.pokemonreborn-showdown.xyz/js/replay-embed.js"
 # Helpful to avoid regenerating replays to speed up script
 old_months = ["2023-01", "2023-02", "2023-03", "2023-04",
               "2023-05", "2023-06", "2023-07", "2023-08",
@@ -14,9 +14,9 @@ old_months = ["2023-01", "2023-02", "2023-03", "2023-04",
               "2024-09", "2024-10", "2024-11", "2024-12", "2025-01",
               "2025-02", "2025-03", "2025-04", "2025-05"]
 # old_months = []
-old_months = [f"../pokemon-showdown/logs/{m}" for m in old_months]
+old_months = [f"../../PokemonShowdown-Reborn/logs/{m}" for m in old_months]
 subfolders = [f.path for f in os.scandir(
-    "../pokemon-showdown/logs/") if f.is_dir() and f.path[-3] == "-"]
+    "../../PokemonShowdown-Reborn/logs/") if f.is_dir() and f.path[-3] == "-"]
 subfolders = set(subfolders) - set(old_months)
 log_json_dict = defaultdict(list)
 
@@ -34,7 +34,7 @@ for dir in subfolders:
                     log_json_dict[format].append(log_json)
 
 for format, log_jsons in log_json_dict.items():
-    format_dir = f"../pokemon-showdown-client/play.pokemonshowdown.com/replays/{format}"
+    format_dir = f"../PokemonShowdown-Client/play.pokemonshowdown.com/replays/{format}"
     if not os.path.exists(format_dir):
         os.makedirs(format_dir)
     for log_json in log_jsons:

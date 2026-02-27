@@ -8,9 +8,6 @@ export default defineConfig({
     build: {
         outDir: "../PokemonShowdown-Client/play.pokemonshowdown.com/replays",
         rollupOptions: {
-            input: {
-                client: 'testclient.html',
-            },
             output: {
                 manualChunks: {
                     react: ["react", "react-dom"],

@@ -1,4 +1,3 @@
-from pokemon_showdown_replays import Replay, Download
 import json
 import os
 import re
@@ -207,7 +206,7 @@ for format, log_jsons in log_json_dict.items():
             continue
 
         replay_object = Replay.create_replay_object(log, show_full_damage=True)
-        html = Download.create_replay(replay_object,
+        html = create_replay(replay_object,
                                       replay_embed_location=replay_embed_location)
         with open(path, "w") as f:
             f.write(html)

@@ -106,6 +106,6 @@ def process_logs(folder_path, output_csv):
                             print(f"Error processing file {file_path}: {e}")
 
 
-process_logs('../../PokemonShowdown-Reborn/logs',
+process_logs('../../lib/PokemonShowdown-Reborn/logs',
              '../PokemonShowdown-Client/play.pokemonshowdown.com/replays/data.csv')
 print("Generated CSV")

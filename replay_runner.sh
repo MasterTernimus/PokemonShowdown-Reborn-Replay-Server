@@ -1,6 +1,10 @@
-trap "echo Exited!; exit;" SIGINT SIGTERM
-while [[ 1=1 ]]
-do
-	watch --chgexit -n 5 "ls -Ral --full-time ../../lib/PokemonShowdown-Reborn/logs/ | sha256sum" && python generate_replays.py && python generate_csv.py
-	sleep 5
+trap "echo 'Exited!'; exit" SIGINT SIGTERM
+
+while true; do
+    inotifywait -r -e modify,create,delete ../../lib/PokemonShowdown-Reborn/logs/
+    
+    echo "Change detected. Regenerating..."
+    
+    python generate_replays.py
+    python generate_csv.py
 done
